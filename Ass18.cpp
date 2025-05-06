@@ -145,3 +145,164 @@ int main() {
 // Enter number of nodes for Tree 2: 5  
 // Enter values:  
 // 50 30 70 20 40  
+
+// Here’s a detailed explanation of how this **sequential file-based student management system** works in C++:
+
+// ---
+
+// ## 🎯 Objective
+
+// Maintain student records with fields:
+
+// * `RollNo`
+// * `Name`
+// * `Division`
+// * `Address`
+
+// And support operations like:
+
+// 1. Add
+// 2. Display
+// 3. Search
+// 4. Edit
+// 5. Delete
+//    ...using **sequential file storage** (`students.txt`).
+
+// ---
+
+// ## 📦 Structure Definition
+
+// ```cpp
+// struct Student {
+//     int rollNo;
+//     string name;
+//     string division;
+//     string address;
+// };
+// ```
+
+// Two helper methods:
+
+// * `to_string()` – converts a `Student` to a CSV string
+// * `from_string()` – parses a line from the file back into a `Student` object
+
+// ---
+
+// ## 💾 File Used
+
+// ```cpp
+// const string FILE_NAME = "students.txt";
+// ```
+
+// Stores all student records **line by line** in CSV format:
+
+// ```
+// 1,John,A,Pune
+// 2,Sara,B,Mumbai
+// ```
+
+// ---
+
+// ## 🔧 Core Functions
+
+// ### 1. `addStudent()`
+
+// Appends a student record to the file:
+
+// ```cpp
+// ofstream file(FILE_NAME, ios::app);
+// file << s.to_string() << endl;
+// ```
+
+// ---
+
+// ### 2. `displayAll()`
+
+// Reads each line from the file, converts to a `Student` and prints it:
+
+// ```cpp
+// ifstream file(FILE_NAME);
+// while (getline(file, line)) {
+//     Student s = Student::from_string(line);
+//     // print s
+// }
+// ```
+
+// ---
+
+// ### 3. `searchStudent(int roll)`
+
+// Reads each line and checks if `rollNo` matches. If found, it prints the record.
+
+// ---
+
+// ### 4. `deleteStudent(int roll)`
+
+// * Opens the original file for reading.
+// * Writes every line **except the one to delete** into a temp file.
+// * Replaces the original file with the temp file.
+
+// This simulates deletion in a sequential file.
+
+// ---
+
+// ### 5. `editStudent(int roll, Student newDetails)`
+
+// Same as delete, but:
+
+// * If roll matches, write the **new details**.
+// * Else, copy the old line as-is.
+
+// ---
+
+// ## 🧪 Sample I/O
+
+// ### Adding:
+
+// ```
+// Roll No: 1
+// Name: John
+// Division: A
+// Address: Pune
+// ```
+
+// Saved as:
+
+// ```
+// 1,John,A,Pune
+// ```
+
+// ### Searching:
+
+// ```
+// Enter RollNo to search: 1
+// Record Found:
+// RollNo: 1
+// Name: John
+// Division: A
+// Address: Pune
+// ```
+
+// ---
+
+// ## 🧠 Notes
+
+// * File is **sequential**: appending is easy, but searching/editing/deleting needs reading the whole file.
+// * Temporary file is used to simulate editing or deleting.
+// * Easy to port into C++ classes if needed.
+
+// ---
+
+// ## ✅ Summary Table
+
+// | Operation   | Method            | File Handling Type  |
+// | ----------- | ----------------- | ------------------- |
+// | Add         | `addStudent()`    | Append (`ios::app`) |
+// | Display All | `displayAll()`    | Read (`ifstream`)   |
+// | Search      | `searchStudent()` | Read (`ifstream`)   |
+// | Delete      | `deleteStudent()` | Read+Write via temp |
+// | Edit        | `editStudent()`   | Read+Write via temp |
+
+// ---
+
+// Would you like a version of this that uses **binary file storage** for better performance and fixed-size records?
