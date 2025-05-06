@@ -1,3 +1,7 @@
+// Implement Dijkstra’s algorithm for shortest path between a given pair of vertices. Display the
+// shortest path from the source vertex 0 to all other vertices
+// Test your program for following example:
+
 #include <iostream>
 #include <vector>
 #include <queue>

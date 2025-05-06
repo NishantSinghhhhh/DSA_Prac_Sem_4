@@ -1,3 +1,6 @@
+// Write a C++ program to inorder threaded binary search tree with n nodes and implement
+// following operations 1.Insert a new node 2. Inorder traversal 
+
 #include <iostream>
 #include <stack>
 using namespace std;

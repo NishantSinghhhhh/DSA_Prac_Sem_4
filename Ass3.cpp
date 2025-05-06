@@ -1,8 +1,13 @@
+// Write a C++ program to construct a binary search tree with n nodes and implement the following
+// operations
+// a. Insert a node b. all traversals and nonrecursive inorder c. Create a clone of a tree and
+// then erase all nodes in the original tree.
+
 #include <iostream>
 #include <stack>
 using namespace std;
 
-// BST Node
+// Node structure
 struct Node {
     int data;
     Node* left;
@@ -20,42 +25,7 @@ Node* insert(Node* root, int val) {
     return root;
 }
 
-// Find minimum value node (for deletion)
-Node* minValue(Node* node) {
-    while (node && node->left)
-        node = node->left;
-    return node;
-}
-
-// Delete a node
-Node* deleteNode(Node* root, int val) {
-    if (!root) return nullptr;
-
-    if (val < root->data)
-        root->left = deleteNode(root->left, val);
-    else if (val > root->data)
-        root->right = deleteNode(root->right, val);
-    else {
-        // Case 1 & 2: One or no child
-        if (!root->left) {
-            Node* temp = root->right;
-            delete root;
-            return temp;
-        } else if (!root->right) {
-            Node* temp = root->left;
-            delete root;
-            return temp;
-        }
-
-        // Case 3: Two children
-        Node* temp = minValue(root->right);
-        root->data = temp->data;
-        root->right = deleteNode(root->right, temp->data);
-    }
-    return root;
-}
-
-// Recursive traversals
+// Recursive Inorder
 void inorder(Node* root) {
     if (!root) return;
     inorder(root->left);
@@ -63,6 +33,7 @@ void inorder(Node* root) {
     inorder(root->right);
 }
 
+// Recursive Preorder
 void preorder(Node* root) {
     if (!root) return;
     cout << root->data << " ";
@@ -70,6 +41,7 @@ void preorder(Node* root) {
     preorder(root->right);
 }
 
+// Recursive Postorder
 void postorder(Node* root) {
     if (!root) return;
     postorder(root->left);
@@ -77,7 +49,7 @@ void postorder(Node* root) {
     cout << root->data << " ";
 }
 
-// Non-recursive inorder
+// Non-recursive Inorder
 void inorderIterative(Node* root) {
     stack<Node*> s;
     Node* curr = root;
@@ -92,6 +64,24 @@ void inorderIterative(Node* root) {
     }
 }
 
+// Clone tree
+Node* clone(Node* root) {
+    if (!root) return nullptr;
+    Node* newNode = new Node(root->data);
+    newNode->left = clone(root->left);
+    newNode->right = clone(root->right);
+    return newNode;
+}
+
+// Delete tree
+void deleteTree(Node*& root) {
+    if (!root) return;
+    deleteTree(root->left);
+    deleteTree(root->right);
+    delete root;
+    root = nullptr;
+}
+
 int main() {
     Node* root = nullptr;
     int n, val;
@@ -104,25 +94,24 @@ int main() {
         root = insert(root, val);
     }
 
-    cout << "\nInorder (recursive): ";
+    cout << "\nRecursive Inorder: ";
     inorder(root);
-    cout << "\nPreorder: ";
+    cout << "\nRecursive Preorder: ";
     preorder(root);
-    cout << "\nPostorder: ";
+    cout << "\nRecursive Postorder: ";
     postorder(root);
-    cout << "\nInorder (non-recursive): ";
+    cout << "\nNon-recursive Inorder: ";
     inorderIterative(root);
 
-    cout << "\n\nEnter a value to delete: ";
-    cin >> val;
-    root = deleteNode(root, val);
+    // Clone and delete
+    Node* clonedRoot = clone(root);
+    deleteTree(root);
+    cout << "\n\nOriginal tree deleted.";
 
-    cout << "\nAfter deletion:\n";
-    cout << "Inorder (recursive): ";
-    inorder(root);
-    cout << "\nInorder (non-recursive): ";
-    inorderIterative(root);
+    cout << "\nCloned Tree Inorder: ";
+    inorder(clonedRoot);
     cout << endl;
 
+    deleteTree(clonedRoot);
     return 0;
 }

@@ -1,3 +1,6 @@
+// Given a directed acyclic graph, a. write a program for topological ordering of vertices b. DFS
+// traversal 
+
 #include <iostream>
 #include <vector>
 #include <stack>

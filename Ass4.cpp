@@ -1,3 +1,8 @@
+// Write a C++ program to construct binary search tree with n nodes and implement the following
+// operations
+// a. Insert a node b. all traversals and nonrecursive inorder c. find the height of a tree. d. find
+// mirror image of a tree
+
 #include <iostream>
 #include <stack>
 using namespace std;

@@ -1,3 +1,7 @@
+// Write a C++ program to construct AVL Tree. Implement following operations.
+// a.Insert b. inorder traversal c. Print height of tree
+// Test your program for following example: Input : 30,31,32,23,22,28,24,29,26,27 4
+
 #include <iostream>
 using namespace std;
 

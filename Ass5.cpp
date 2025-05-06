@@ -1,3 +1,10 @@
+// Write a C++ program to construct binary search tree with n nodes and implement following
+// operations:
+// Insert a node b. all traversals (recursive and nonrecursive) c: Construct Tree from given Inorder
+// and Preorder traversals
+// Inorder: 2, 3, 4, 6, 7, 9, 13, 15, 17, 18, 20
+// Preorder: 15,6,3,2,4,7,13,9,18,17,20
+
 #include <iostream>
 #include <unordered_map>
 #include <stack>

@@ -1,3 +1,6 @@
+// Write a program to convert given binary search tree into inorder threaded binary search tree and
+// its inorder traversal
+
 #include <iostream>
 using namespace std;
 

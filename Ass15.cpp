@@ -1,3 +1,11 @@
+// Given sequence k = k1<; k2<..... kn of n sorted keys, with a search probability pi for each
+// key ki . Build the Binary search tree that has the least search cost given the access probability
+// for each key. Display weight matrix, cost matrix and root matrix.
+// test your program for following example:
+// k1=do, k2=if, k3=read, k4= while
+// p1 = 1, p2 = 3, p3 = 1, p4 = 3
+// q0 = 1, q1 = 2, q2 = 1, q3= 1, q4 = 3
+
 #include <iostream>
 #include <vector>
 #include <iomanip>

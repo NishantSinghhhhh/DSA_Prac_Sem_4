@@ -1,3 +1,11 @@
+// Consider the student database of N students and their marks. Make use of a hash table
+// implementation to quickly insert and lookup students' PNR and marks. Implement collision
+// handling techniques- linear probing with chaining with replacement
+// Test case :
+// Create a hash table of size 10.
+// Linear probing with chaining with replacement: Insert the following PNR: (11,
+// 21,31,34,55,52,33)
+
 #include <iostream>
 using namespace std;
 

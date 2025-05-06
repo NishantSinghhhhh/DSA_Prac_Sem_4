@@ -1,3 +1,7 @@
+// Department maintains student information. the file contains rollno, name, division, and address.
+// Allow user to add, edit, delete, insert and search information of student. use sequential file to
+// maintain the data
+
 import java.io.*;
 import java.util.*;
 

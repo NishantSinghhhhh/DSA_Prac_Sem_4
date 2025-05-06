@@ -1,3 +1,11 @@
+// Consider the student database of N students and their marks. Make use of a hash table
+// implementation to quickly insert and lookup students' Rollno and marks. Implement collision
+// handling techniques- linear probing with chaining without replacement.
+// Test case:
+// Create a hash table of size 10.
+// 1. Linear probing with chaining without replacement: Insert the following RollNos:
+// (31,13,14,51,16,71,48,19)
+
 #include <iostream>
 using namespace std;
 

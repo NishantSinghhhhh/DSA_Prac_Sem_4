@@ -1,3 +1,8 @@
+// Input a list of more than 20 correctly spelled lowercase words. The words are inserted into the
+// hash table. Handle collision using separate chaining. After input is obtained, each word that the
+// user enters into the program is looked up within the hash table to see if it exists. If the user
+// entered word exists within the hash table, then that word is spelled correctly.
+
 #include<iostream>
 #include<vector>
 #include<list>

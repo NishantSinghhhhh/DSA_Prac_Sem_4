@@ -1,3 +1,7 @@
+// Write a JAVA program to read the marks obtained by students in an online examination of a
+// particular subject. a)Find the minimum and maximum marks obtained in that subject Use the
+// heap data structure. b) sort the marks in ascending order using heapsort .
+
 import java.util.*;
 
 public class HeapMarks {
