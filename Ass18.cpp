@@ -138,3 +138,10 @@ int main() {
 
     return 0;
 }
+
+// Enter number of nodes for Tree 1: 5  
+// Enter values:  
+// 50 30 70 20 40  
+// Enter number of nodes for Tree 2: 5  
+// Enter values:  
+// 50 30 70 20 40  

@@ -97,3 +97,10 @@ int main() {
 
     return 0;
 }
+
+// Enter number of vertices and edges: 6 4
+// Enter 4 edges (u v):
+// 0 1
+// 1 2
+// 3 4
+// 4 5

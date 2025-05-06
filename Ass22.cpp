@@ -93,3 +93,5 @@ int main() {
 
     return 0;
 }
+
+// Enter string to encode: abcdefgh

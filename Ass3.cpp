@@ -115,3 +115,7 @@ int main() {
     deleteTree(clonedRoot);
     return 0;
 }
+
+// Enter number of nodes: 7  
+// Enter 7 values:  
+// 50 30 70 20 40 60 80

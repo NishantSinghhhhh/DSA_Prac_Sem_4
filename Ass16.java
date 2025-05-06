@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-public class HeapMarks {
+public class Ass16 {
 
     // Heapify subtree rooted at index i (for max-heap)
     public static void heapify(int[] arr, int n, int i) {
@@ -87,3 +87,8 @@ public class HeapMarks {
 // Enter number of students: 6
 // Enter marks of 6 students:
 // 72 65 90 78 85 60
+
+
+// Use these commands to compile and run the program:
+// javac Ass16.java
+// java Ass16
